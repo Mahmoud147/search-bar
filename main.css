@@ -1,0 +1,115 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+.search {
+    width: 80px;
+    height: 80px;
+    background-color: #fff;
+    margin: auto;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    border-radius: 50%;
+    transition: all 1s;
+    z-index: 4;
+}
+
+.search:hover {
+    cursor: pointer;
+}
+
+.search::before {
+    content: ""; 
+    width: 12px;
+    height: 2px;
+    background-color: #151515;
+    margin: auto;
+    position: absolute;
+    top: 22px;
+    right: 0;
+    bottom: 0;
+    left: 22px;
+    transform: rotate(45deg);
+    transition: all 1s;
+}
+
+.search::after {
+    content: "";
+    width: 25px;
+    height: 25px;
+    border: 2px solid #151515;
+    border-radius: 50%;
+    margin: auto;
+    position: absolute;
+    top: -5px;
+    right: 0;
+    bottom: 0;
+    left: -5px;
+    transition: all 1s;
+}
+
+
+input {
+    width: 50px;
+    height: 50px;
+    font-family: "Inconsolata", monospace;
+    background-color: #fff;
+    color: #151515;
+    margin: auto;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    outline: none;
+    border: 1px solid #151515;
+    padding: 0 80px 0 20px;
+    border-radius: 10px;
+    transition: all 1s;
+    opacity: 0;
+    z-index: 5;
+    font-weight: bolder;
+    letter-spacing: 0.1em;
+}
+
+input:hover {
+    cursor: pointer;
+}
+
+input:focus {
+    width: 300px;
+    opacity: 1;
+    cursor: text;
+}
+
+input:focus~.search {
+    width: 20px;
+    height: 20px;
+    right: -250px;
+    z-index: 6;
+}
+
+input:focus~.search::before {
+    width: 25px;
+    height: 1px;
+    background-color: #151515;
+    border: 1px solid #151515;
+    top: 0;
+    left: 0;
+}
+
+input:focus~.search::after {
+    width: 25px;
+    height: 1px;
+    background-color: #151515;
+    border: 1px solid #151515;
+    border-radius: 0%;
+    transform: rotate(-45deg);
+    top: 0;
+    left: 0;
+}
